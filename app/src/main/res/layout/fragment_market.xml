@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MarketFragment">
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/homeHeading"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Market Explorer"
+          android:textSize="26sp"
+          android:textStyle="bold"
+          android:padding="12dp" />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Real time valuation of Digital Assets"
+          android:textSize="18sp"
+          android:padding="12dp">
+
+      </TextView>
+
+      <androidx.cardview.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="12dp"
+          app:cardCornerRadius="12dp"
+          app:cardElevation="4dp">
+
+         <SearchView
+             android:id="@+id/searchView"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:queryHint="Search cryptocurrency..."
+             android:iconifiedByDefault="false"/>
+
+      </androidx.cardview.widget.CardView>
+
+      <com.google.android.material.chip.ChipGroup
+          android:id="@+id/chipGroup"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="12dp"
+          app:singleSelection="true"
+          app:chipSpacing="6dp">
+
+         <com.google.android.material.chip.Chip
+             android:id="@+id/chipMarketCap"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Market Cap"
+             android:checkable="true">
+         </com.google.android.material.chip.Chip>
+
+         <com.google.android.material.chip.Chip
+             android:id="@+id/chipGainer"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Top Gainers"
+             android:checkable="true">
+         </com.google.android.material.chip.Chip>
+
+         <com.google.android.material.chip.Chip
+             android:id="@+id/chiplosers"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Top Losers"
+             android:checkable="true">
+         </com.google.android.material.chip.Chip>
+
+         <com.google.android.material.chip.Chip
+             android:id="@+id/chipPrice"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Price"
+             android:checkable="true">
+         </com.google.android.material.chip.Chip>
+         <com.google.android.material.chip.Chip
+             android:id="@+id/chipVolume"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Volume"
+             android:checkable="true">
+         </com.google.android.material.chip.Chip>
+
+      </com.google.android.material.chip.ChipGroup>
+
+
+   </LinearLayout>
+
+
+   <!-- Column Labels -->
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:padding="8dp">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Rank"
+          android:paddingRight="7dp"
+          android:textSize="16sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:text="Name"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          android:layout_weight="1"
+          android:gravity="center" />
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Price"
+          android:textSize="16sp"
+          android:textStyle="bold" />
+
+   </LinearLayout>
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/marketRecycler"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1" />
+
+</LinearLayout>
